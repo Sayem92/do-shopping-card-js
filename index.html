@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Shopping Card JS</title>
+    <!-- link tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisyui cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <div class="btm-nav z-10">
+            <button class="bg-pink-200 text-pink-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+              <span class="btm-nav-label">Home</span>
+            </button>
+            <button class="active bg-neutral text-neutral-content">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="btm-nav-label">Shopping with Js</span>
+            </button>
+            <button class="bg-teal-200 text-teal-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              <span class="btm-nav-label">Statics</span>
+            </button>
+          </div>
+    </header>
+    <section class="w-9/12 mx-auto mt-10 pb-40">
+        <div class="grid grid-cols-2 gap-4 divide-x">
+            <!-- all products  -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- products 1  -->
+                <div class="card card-compact w-full bg-base-100 shadow-xl gap-4">
+                    <figure><img class="w-full h-40" src="images/coffee.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Coffee JS</h2>
+                      <p>Price : $<span>100</span></p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary" onclick="addToCard(this)">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+               <!-- products 2  -->
+               <div class="card card-compact w-full bg-base-100 shadow-xl gap-4">
+                <figure><img class="w-full h-40" src="images/heart.webp" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Heart JS</h2>
+                  <p>Price : $<span>105</span></p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary" onclick="addToCard(this)">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+               <!-- products 3  -->
+               <div class="card card-compact w-full bg-base-100 shadow-xl gap-4">
+                <figure><img class="w-full h-40" src="images/panda.jpeg" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Panda JS</h2>
+                  <p>Price : $<span>110</span></p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary" onclick="addToCard(this)">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+               <!-- products 4  -->
+               <div class="card card-compact w-full bg-base-100 shadow-xl gap-4">
+                <figure><img class="w-full h-40" src="images/umbrella.webp" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Umbrella JS</h2>
+                  <p>Price : $<span>107</span></p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary" onclick="addToCard(this)">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+               <!-- products 5  -->
+               <div class="card card-compact w-full bg-base-100 shadow-xl gap-4">
+                <figure><img class="w-full h-40" src="images/vue.webp" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Vue JS</h2>
+                  <p>Price : $<span>111</span></p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary" onclick="addToCard(this)">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+                 <!-- products card -->
+                <div>
+                   <h2 class="text-5xl"> Total Add Products <span class="text-blue-500" id="total-added-product">0</span></h2>
+                   <!-- table  -->
+                   <div class="overflow-x-auto">
+                    <table class="table table-zebra w-full">
+                      <!-- head -->
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Name</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody id="card-products">
+                        <!-- row -1  -->
+                        <!-- <tr>
+                          <th>1</th>
+                          <td>sami</td>
+                          <td>400</td>
+                        </tr> -->
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+        </div>
+    </section>
+
+    <script src="js/shopping.js"></script>
+</body>
+</html>
